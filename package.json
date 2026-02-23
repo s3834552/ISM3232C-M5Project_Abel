@@ -1,0 +1,25 @@
+{
+  "name": "mediaman",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "cross-env": "5.2.0",
+    "parcel": "^2.16.4",
+    "typescript": "3.1.1"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "build": "cross-env NODE_ENV=production parcel build index.html --public-url .",
+    "watch": "parcel watch index.html",
+    "serve": "npm start",
+    "start": "parcel serve --open --port 3000 index.html"
+  },
+  "author": "Jordan Abel",
+  "license": "MIT",
+  "dependencies": {
+    "class-transformer": "^0.5.1",
+    "localforage": "^1.10.0",
+    "reflect-metadata": "^0.2.2"
+  }
+}

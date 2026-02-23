@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Organizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        input, button {
+            margin: 5px 0;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px;
+            border: 1px solid #ccc;
+            margin: 5px 0;
+            border-radius: 3px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Organizer</h1>
+    <input type="text" id="title" placeholder="Enter book title" required>
+    <input type="text" id="author" placeholder="Enter author name" required>
+    <input type="text" id="genre" placeholder="Enter genre" required>
+    <button id="addBook">Add Book</button>
+    <h2>Book List</h2>
+    <ul id="bookList"></ul>
+
+    <script>
+        document.getElementById('addBook').addEventListener('click', function() {
+            const title = document.getElementById('title').value;
+            const author = document.getElementById('author').value;
+            const genre = document.getElementById('genre').value;
+            if (title && author && genre) {
+                const li = document.createElement('li');
+                li.textContent = `Title: ${title}, Author: ${author}, Genre: ${genre}`;
+                document.getElementById('bookList').appendChild(li);
+                document.getElementById('title').value = '';
+                document.getElementById('author').value = '';
+                document.getElementById('genre').value = '';
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    </script>
+</body>
+</html>
